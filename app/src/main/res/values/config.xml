@@ -3,13 +3,13 @@
 
     <!--Watson Assistant service credentials-->
     <!-- REPLACE `ASSISTANT_ID_HERE` with ID of the Assistant to use -->
-    <string name="assistant_id">2955fa28-fa28-422d-99de-05474faf2dd2</string>
+    <string name="assistant_id">ID</string>
 
     <!-- REPLACE `ASSISTANT_API_KEY_HERE` with Watson Assistant service API Key-->
-    <string name="assistant_apikey">NfoYPui7w_d4dnad0EGrjXfpacYzr7kgqgBxyjUBkvxl</string>
+    <string name="assistant_apikey">KEY</string>
 
     <!-- REPLACE the URL with the one provided in the credentials of the service you created-->
-    <string name="assistant_url">https://api.eu-gb.assistant.watson.cloud.ibm.com/instances/c4605910-df58-47db-ac6c-2c6e49643961</string>
+    <string name="assistant_url">URL</string>
 
 
     <!--Watson Speech To Text(STT) service credentials-->
