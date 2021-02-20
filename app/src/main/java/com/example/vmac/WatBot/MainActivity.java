@@ -72,18 +72,18 @@ public class MainActivity extends AppCompatActivity {
 
   private Assistant watsonAssistant;
   private Response<SessionResponse> watsonAssistantSession;
-  private SpeechToText speechService;
-  private TextToSpeech textToSpeech;
+  //private SpeechToText speechService;
+  //private TextToSpeech textToSpeech;
 
   private void createServices() {
     watsonAssistant = new Assistant("2019-02-28", new IamAuthenticator(mContext.getString(R.string.assistant_apikey)));
     watsonAssistant.setServiceUrl(mContext.getString(R.string.assistant_url));
 
-    textToSpeech = new TextToSpeech(new IamAuthenticator((mContext.getString(R.string.TTS_apikey))));
-    textToSpeech.setServiceUrl(mContext.getString(R.string.TTS_url));
+    //textToSpeech = new TextToSpeech(new IamAuthenticator((mContext.getString(R.string.TTS_apikey))));
+    //textToSpeech.setServiceUrl(mContext.getString(R.string.TTS_url));
 
-    speechService = new SpeechToText(new IamAuthenticator(mContext.getString(R.string.STT_apikey)));
-    speechService.setServiceUrl(mContext.getString(R.string.STT_url));
+    //speechService = new SpeechToText(new IamAuthenticator(mContext.getString(R.string.STT_apikey)));
+    //speechService.setServiceUrl(mContext.getString(R.string.STT_url));
   }
 
   @Override
@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view, final int position) {
                 Message audioMessage = (Message) messageArrayList.get(position);
                 if (audioMessage != null && !audioMessage.getMessage().isEmpty()) {
-                    new SayTask().execute(audioMessage.getMessage());
+                   // new SayTask().execute(audioMessage.getMessage());
                 }
             }
 
@@ -273,7 +273,7 @@ public class MainActivity extends AppCompatActivity {
                                                     messageArrayList.add(outMessage);
 
                                                     // speak the message
-                                                    new SayTask().execute(outMessage.getMessage());
+                                                    //new SayTask().execute(outMessage.getMessage());
                                                     break;
 
                                                 case "option":
@@ -291,7 +291,7 @@ public class MainActivity extends AppCompatActivity {
                                                     messageArrayList.add(outMessage);
 
                                                     // speak the message
-                                                    new SayTask().execute(outMessage.getMessage());
+                                                    //new SayTask().execute(outMessage.getMessage());
                                                     break;
 
                                                 case "image":
@@ -299,7 +299,7 @@ public class MainActivity extends AppCompatActivity {
                                                     messageArrayList.add(outMessage);
 
                                                     // speak the description
-                                                    new SayTask().execute("You received an image: " + outMessage.getTitle() + outMessage.getDescription());
+                                                   // new SayTask().execute("You received an image: " + outMessage.getTitle() + outMessage.getDescription());
                                                     break;
                                                 default:
                                                     Log.e("Error", "Unhandled message type");
@@ -335,7 +335,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     try {
-                        speechService.recognizeUsingWebSocket(getRecognizeOptions(capture), new MicrophoneRecognizeDelegate());
+                        //speechService.recognizeUsingWebSocket(getRecognizeOptions(capture), new MicrophoneRecognizeDelegate());
                     } catch (Exception e) {
                         showError(e);
                     }
@@ -420,7 +420,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private class SayTask extends AsyncTask<String, Void, String> {
+    /*private class SayTask extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... params) {
             streamPlayer.playStream(textToSpeech.synthesize(new SynthesizeOptions.Builder()
@@ -430,7 +430,7 @@ public class MainActivity extends AppCompatActivity {
                     .build()).execute().getResult());
             return "Did synthesize";
         }
-    }
+    }*/
 
     //Watson Speech to Text Methods.
     private class MicrophoneRecognizeDelegate extends BaseRecognizeCallback {
