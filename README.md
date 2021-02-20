@@ -1,3 +1,10 @@
+# Chatbot for Cognitive Computing Assignment
+
+This chatbot was made using the IBM Cloud sample repository as a base for an assignment. The original README file is placed right under this explanations.
+
+
+
+
 # A voice-enabled Android ChatBot powered by IBM Watson
 
 [![Build Status](https://travis-ci.org/IBM-Cloud/chatbot-watson-android.svg?branch=master)](https://travis-ci.org/IBM-Cloud/chatbot-watson-android)
